@@ -1,6 +1,6 @@
 class ExperimentsController < ApplicationController
   def show
-    @proposal = Proposal.find(params[:propsal_id])
+    @proposal = Proposal.find(params[:proposal_id])
     @experiment = Experiment.find(params[:id])
     #Shows specific experiment as well as observations specific to exp.
   end
