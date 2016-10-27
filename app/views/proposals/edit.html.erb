@@ -1,0 +1,31 @@
+<h1>Edit Proposal</h1>
+ 
+<%= form_for :proposal, url: proposal_path(@proposal), method: :patch do |f| %>
+ 
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :summary %><br>
+    <%= f.text_area :summary %>
+  </p>
+
+  <p>
+    <%= f.label :hypothesis %><br>
+    <%= f.text_area :hypothesis %>
+  </p>
+
+  <p>
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', proposals_path %>
