@@ -1,6 +1,7 @@
 class CreateObservations < ActiveRecord::Migration
   def change
     create_table :observations do |t|
+      t.string :title
       t.text :body
 
       t.references :experiment, foreign_key: true

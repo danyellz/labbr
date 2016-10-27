@@ -30,9 +30,8 @@ ActiveRecord::Schema.define(version: 20161027003843) do
   create_table "experiments", force: :cascade do |t|
     t.string   "title"
     t.text     "procedures"
-    t.string   "results"
-    t.string   "text"
-    t.string   "conclusion"
+    t.text     "results"
+    t.text     "conclusion"
     t.integer  "proposal_id"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
@@ -40,6 +39,7 @@ ActiveRecord::Schema.define(version: 20161027003843) do
   end
 
   create_table "observations", force: :cascade do |t|
+    t.string   "title"
     t.text     "body"
     t.integer  "experiment_id"
     t.integer  "user_id"
@@ -51,9 +51,10 @@ ActiveRecord::Schema.define(version: 20161027003843) do
     t.string   "title"
     t.text     "summary"
     t.text     "hypothesis"
+    t.string   "status",     default: "open", null: false
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "users", force: :cascade do |t|
