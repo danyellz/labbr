@@ -12,3 +12,5 @@ class CreateProposals < ActiveRecord::Migration
     end
   end
 end
+
+ Proposal.create(title: "hey", summary: "yeah", hypothesis: "thing", status: "open")
