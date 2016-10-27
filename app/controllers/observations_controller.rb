@@ -1,6 +1,7 @@
 class ObservationsController < ApplicationController
 
   def new
+
     #Give a variable a placeholder form
   end
 
@@ -9,6 +10,8 @@ class ObservationsController < ApplicationController
   end
 
   def show
+    @experiment = Experiment.find(params[:experiment_id])
+    @observation = Observation.find(params[:id])
     #Show comments for the observation
   end
 

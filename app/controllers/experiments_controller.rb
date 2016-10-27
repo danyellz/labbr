@@ -1,8 +1,6 @@
 class ExperimentsController < ApplicationController
   def show
-    p '*'*80
-    p params
-      p '*'*80
+    @proposal = Proposal.find(params[:propsal_id])
     @experiment = Experiment.find(params[:id])
     #Shows specific experiment as well as observations specific to exp.
   end
@@ -17,6 +15,7 @@ class ExperimentsController < ApplicationController
     end
 
   def create
+    @experiment = Experiment.new(experiment_params)
     #will need to pass proposal id associated with the new experiment, then save it do the DB
     #Create an experiment
   end
