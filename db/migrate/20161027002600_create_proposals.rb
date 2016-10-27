@@ -4,6 +4,7 @@ class CreateProposals < ActiveRecord::Migration
       t.string :title
       t.text :summary
       t.text :hypothesis
+      t.string :status, :null => false, :default => 'open'
 
       t.references :user, foreign_key: true
 
