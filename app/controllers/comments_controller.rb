@@ -1,4 +1,4 @@
-class CommentController < ApplicationController
+class CommentsController < ApplicationController
   def new
     #Add a comment placeholder for parent data.
   end

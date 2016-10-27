@@ -12,6 +12,12 @@ resources :experiments do
   resources :observations
 end
 
+post '/users/sign_up' => 'users#create'
+
+get '/users/sign_in' => 'users#login'
+
+get '/users/sign_out' => 'users#destroy'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

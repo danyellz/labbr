@@ -1,4 +1,4 @@
-class ProposalController < ApplicationController
+class ProposalsController < ApplicationController
 
   def new
     #Give a variable a placeholder form @proposal
