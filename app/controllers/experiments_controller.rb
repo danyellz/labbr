@@ -1,4 +1,4 @@
-class ExperimentController < ApplicationController
+class ExperimentsController < ApplicationController
 
   def new
     #Give a variable a placeholder form @experiment
