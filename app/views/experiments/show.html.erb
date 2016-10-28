@@ -7,6 +7,10 @@
 <h2> <text> Conclusion: </text><%= @experiment.conclusion %></h2>
 </table>
 
-<h1>Observations:</h1>
+<%@experiment.comments.each do |comment|%>
+	<p>
+	<%=comment.body%>
+	</p>
+<%end%>
 <br>
-<h1>Comments on Experiments:</h1>
+<h1>Observations:</h1>
