@@ -1,5 +1,4 @@
 class ExperimentsController < ApplicationController
-
   def show
     @proposal = Proposal.find(params[:proposal_id])
     @experiment = Experiment.find(params[:id])
@@ -22,4 +21,3 @@ class ExperimentsController < ApplicationController
   def delete
     #Meh
   end
-end
