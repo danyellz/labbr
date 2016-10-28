@@ -15,7 +15,7 @@ class ProposalsController < ApplicationController
       u_id = current_user.id
       @proposal.user_id = u_id
       current_user.proposals << @proposal
-      redirect_to proposals_path
+      redirect_to proposals_pathw
   end
 
   def show

@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
   def new
     #Add a comment placeholder for parent data.
   end
@@ -8,7 +9,18 @@ class CommentsController < ApplicationController
   end
 
   def create
-    #Post new comment
+    u_id = current_user.id
+    p "*" * 100
+    p params 
+    p "*" * 100
+    u_id = current_user.id
+    @proposal = Proposal.find_by(id: params[:commentable_id])
+    comment = Comment.new(comment_params)
+    comment.user_id = u_id
+
+    if comment.save
+      redirect_to controller: 'proposals', action: 'show', id: @proposal.id
+    end
   end
 
   def edit
@@ -18,4 +30,9 @@ class CommentsController < ApplicationController
   def delete
     #Remove comments
   end
+
+  def comment_params
+    params.require(:comment).permit(:body, :commentable_id, :commentable_type, :user_id)
+  end
+
 end
