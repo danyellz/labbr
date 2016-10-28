@@ -1,12 +1,21 @@
 class ExperimentsController < ApplicationController
 
   def new
+    @experiment = Experiment.new
     #Give a variable a placeholder form @experiment
   end
 
   def create
-    #Create an experiment
+    @experiment = Experiment.new(experiment_params)
+    @experiment.user_id = current_user.id
 
+    if @experiment.save
+      p @experiment
+      # redirect_to proposal_path(proposal.id)
+      # redirect_to url_for(controller: 'proposals', action: 'show')
+    else
+      render :new
+    end
   end
 
   def show
@@ -16,11 +25,19 @@ class ExperimentsController < ApplicationController
   end
 
   def edit
-    #Meh
+    @experiment = Experiment.find(params[:id])
+
   end
 
   def delete
     #Meh
   end
+
+
+  private
+    def experiment_params
+      params.require(:experiment).permit(:title, :procedures, :results, :conclusion, :user_id, :proposal_id)
+    end
+
 
 end

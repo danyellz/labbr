@@ -6,6 +6,7 @@
       </div>
     </div>
 <br>
+
 <table>
 <h2> <text> Procedures:</text> <%= @experiment.procedures %></h2>
 <h2> <text> Results: </text><%= @experiment.results %></h2>
@@ -19,3 +20,6 @@
 <%end%>
 <br>
 <h1>Observations:</h1>
+<%@experiment.observations.each do |observation|%>
+<%=observation.title%>
+<%end%>

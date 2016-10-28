@@ -38,6 +38,7 @@
 <% @proposals.each do |proposal| %>
    
     <h3><%= link_to proposal.title, proposal_path(proposal) %></h3>
+    <p><%=proposal.user.try(:email)%></p>
     <li><%= link_to 'Edit', edit_proposal_path(proposal) %></li>
  
   <% end %>
