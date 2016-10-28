@@ -1,0 +1,29 @@
+<h1><%= @proposal.title %></h1>
+	<p><%= @proposal.summary %></p>
+	<p><%= @proposal.hypothesis %></p>
+	<p><%= @proposal.status %></p>
+
+<h2>Comments:</h2>
+	<% if @comments.empty? %>
+		<p>No comments added</p>
+	<% else %>
+		<ul>
+			<% @comments.each do |comment| %>
+	    	<li><%= comment.body %></li>
+	 	 <% end %>
+	 	 <ul>
+	<% end %>
+	 
+
+<h2>Experiments:</h2>
+	<% if @experiments.empty? %>
+		<p>No experiments added</p>
+	<% else %>
+		<ul>
+			<% @experiments.each do |experiment| %>
+		    <li><%= experiment.title %></li>
+		    <li><%= link_to 'Show', proposal_experiment_url(@proposal, experiment) %></li>
+		  <% end %>
+ 		</ul>
+ 	<% end %>
+
