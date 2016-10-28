@@ -12,6 +12,11 @@ resources :experiments do
   resources :observations
 end
 
+resources :comments
+
+# resources :experiments do
+# end
+
 post '/users/sign_up' => 'users#create'
 
 get '/users/sign_in' => 'users#login'

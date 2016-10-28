@@ -7,10 +7,46 @@
 <h2> <text> Conclusion: </text><%= @experiment.conclusion %></h2>
 </table>
 
-<%@experiment.comments.each do |comment|%>
-	<p>
-	<%=comment.body%>
-	</p>
+<h1>Comments:</h1>
+<div class="comments-list">
+	<%@experiment.comments.each do |comment|%>
+	<div>
+		<p>
+		<%=comment.body%>
+		</p>
+		<li><%= link_to 'Edit', edit_experiment_path(@experiment, comment) %></li>
+		<br>
+	</div>
+</div>
+<input type="text" name="name" class="new-comment">
+<li class='add-comment'>Add Comment</li>
+
+<!-- <%= link_to 'Add comment', new_comment_path %> -->
 <%end%>
 <br>
-<h1>Observations:</h1>
+<script>
+	$('.add-comment').on('click', () => {
+		let newComment = $('.new-comment');
+		console.log(newComment);
+		$(".comments-list").append('<li>' + newComment.val() + '</li>');
+		$("new-comment").val('');
+	});
+</script>
+
+<h1>Observations</h1>
+<div class="observations-list">
+	<%@experiment.observations.each do |observation|%>
+	<%= observation.title %>
+	<%end%>
+</div>
+<input type="text" name="name" class="new-observation-comment">
+<li class='add-observation-comment'>Add Comment</li>
+
+
+<script>
+	$('.add-observation-comment').on('click', () => {
+		let newObservationComment = $('.new-observation-comment');
+		$(".observations-list").append('<li>' + newObservationComment.val() + '</li>');
+		$("new-observation-comment").val('');
+	});
+</script>

@@ -1,0 +1,14 @@
+<%= form_for :comments, url: experiments_path(@experiment), method: :patch do |f| %>
+
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+  </p>
+
+
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', experiments_path %>
