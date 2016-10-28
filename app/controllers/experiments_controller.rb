@@ -13,7 +13,6 @@ class ExperimentsController < ApplicationController
     #Create an experiment
   end
 
-
   def edit
     #Meh
   end
@@ -21,3 +20,5 @@ class ExperimentsController < ApplicationController
   def delete
     #Meh
   end
+
+end
