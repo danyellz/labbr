@@ -9,6 +9,7 @@ class UsersController < ApplicationController
      if @user.save
        puts "Saved things!"
        redirect_to proposals_path
+       sign_in(@user)
      else
        @errors = @user.errors.full_messages
      end

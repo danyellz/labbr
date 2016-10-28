@@ -18,6 +18,8 @@ get '/users/sign_in' => 'users#login'
 
 get '/users/sign_out' => 'users#destroy'
 
+post '/proposals/create'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

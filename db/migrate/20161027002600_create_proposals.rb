@@ -4,7 +4,7 @@ class CreateProposals < ActiveRecord::Migration
       t.string :title
       t.text :summary
       t.text :hypothesis
-      t.string :status, :null => false, :default => 'open'
+      t.string :status
 
       t.references :user, foreign_key: true
 
@@ -12,5 +12,3 @@ class CreateProposals < ActiveRecord::Migration
     end
   end
 end
-
- Proposal.create(title: "hey", summary: "yeah", hypothesis: "thing", status: "open")

@@ -1,10 +1,43 @@
-<h1>Proposals</h1>
+<div id="proposal-jumbo" class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Proposals</h1>
+      </div>
+    </div>
+
+<a href="#" data-toggle="modal" data-target="#proposal-modal">Add Proposal</a>
+
+<div class="modal fade" id="proposal-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Submit a New Proposal</h1><br>
+
+			<%=form_for :proposal, url: '/proposals' do |f|%>
+				<%= f.label :title %>:
+  				<%= f.text_field :title %><br>
+
+  				<%= f.label :summary %>:
+  				<%= f.text_area :summary %><br>
+
+  				<%= f.label :hypothesis %>:
+  				<%= f.text_area :hypothesis %><br>
+
+  				<%= f.label :status %>:
+  				<%= f.text_area :status %><br>
+
+  				<%= f.submit %>
+  			<%end%>
+					
+				  <div class="login-help">
+					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+				  </div>
+				</div>
+			</div>
+		  </div>
 
 <ul>
 <% @proposals.each do |proposal| %>
-    
-    <li><%= proposal.title %></li>
-    <li><%= link_to 'Show', proposal_path(proposal) %></li>
+   
+    <h3><%= link_to proposal.title, proposal_path(proposal) %></h3>
     <li><%= link_to 'Edit', edit_proposal_path(proposal) %></li>
  
   <% end %>
